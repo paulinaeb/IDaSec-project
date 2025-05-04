@@ -136,6 +136,20 @@ You can extend this project by training classifiers on clean vs. adversarial dat
   import nltk
   nltk.download('averaged_perceptron_tagger')
   ```
+---
+
+## 📚 Literature & References
+
+These works inspired or informed the evasion strategies demonstrated in this project:
+
+- [Evasion Attacks on Machine Learning (Medium)](https://medium.com/data-science/evasion-attacks-on-machine-learning-or-adversarial-examples-12f2283e06a1)  
+  A beginner-friendly introduction to adversarial examples and how they bypass models.
+
+- [Adversarial Attacks Against Text-Based AI Models: A Survey (IEEE 2024)](https://ieeexplore.ieee.org/abstract/document/10431737)  
+  A comprehensive academic overview of text-based evasion techniques in NLP.
+
+- [TextAttack: A Framework for Adversarial Attacks, Data Augmentation, and Training in NLP (EMNLP 2020)](https://aclanthology.org/2020.emnlp-demos.16.pdf)  
+  The paper behind the `textattack` library, used in this project for DeepWordBug and TextFooler attacks.
 
 ---
 
