@@ -27,19 +27,30 @@ Each notebook is self-contained with markdown documentation explaining how to ru
 
 ```
 .
-├── charswap.ipynb
-├── deepwordbug.ipynb
-├── evasion.ipynb
-├── homoglyph.ipynb
-├── spacing.ipynb
-├── textfooler.ipynb
-├── dataset/
-│   └── sms/
-│       ├── train.csv
-│       ├── val.csv
-│       └── test.csv
-├── requirements.txt
-└── README.md
+├── Evasion_notebooks/               # Jupyter notebooks for each attack
+│   ├── charswap.ipynb               # Random character swaps
+│   ├── deepwordbug.ipynb            # DeepWordBug (TextAttack)
+│   ├── evasion.ipynb                # Combined obfuscation methods
+│   ├── homoglyph.ipynb              # Unicode homoglyph substitutions
+│   ├── spacing.ipynb                # Keyword spacing attack
+│   └── textfooler.ipynb             # TextFooler (TextAttack)
+│
+├── dataset/                         # Dataset directory
+│   ├── enron1/                      # Enron variant 1
+│   ├── enron2/                      # Enron variant 2
+│   └── sms/                         # SMS dataset
+│       ├── charswap/               # Charswap-augmented data
+│       ├── homoglyph/              # Homoglyph-augmented data
+│       ├── mixed/                  # Mixed obfuscation results
+│       ├── spacing/                # Spacing attack results
+│       ├── train.csv               # Raw training data
+│       ├── val.csv                 # Raw validation data
+│       └── test.csv                # Raw test data
+│
+├── .gitignore
+├── README.md
+└── requirements.txt
+
 ```
 
 ---
