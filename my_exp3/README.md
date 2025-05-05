@@ -8,10 +8,11 @@
 - before_evasion notebook
   in this notebook, you can find the whole pipeline of developing the LSTM model and saving it's weights
   you can find it here
-  [View the evasion analysis notebook](https://github.com/paulinaeb/IDaSec-project/blob/exp3/my_exp3/before_evasion.ipynb)
+  [View the model_development](https://github.com/paulinaeb/IDaSec-project/blob/exp3/my_exp3/before_evasion.ipynb)
 
 - after_evasion notebook
   in this notebook, you can find the use of the pretrained model in order to test it on evasion methods
-  you can find it [after_evasion]([/after_evasion.ipynb](https://github.com/paulinaeb/IDaSecproject/blob/exp3/my_exp3/after_evasion.ipynb))
+  you can find it here
+  [View the evasion_analysis](https://github.com/paulinaeb/IDaSec-project/blob/exp3/my_exp3/after_evasion.ipynb)
 
 
