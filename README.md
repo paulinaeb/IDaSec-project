@@ -14,8 +14,15 @@ so 3 datasets were preprocessed which are:
 2) Enron2
 3) SMS
 each dataset is splitted to three main splits: train, val, test
+
 so the models can use them directly, to ensure fair comparision
+
 The datasets can be found here: 
+
+[spam_datasets_preprocessing](https://github.com/paulinaeb/IDaSec-project/blob/main/dataset/data_security_datasets.ipynb)
+
+[spam_datasets](https://github.com/paulinaeb/IDaSec-project/tree/main/dataset)
+
 this task was held by @Samiha
 
 
@@ -25,12 +32,22 @@ There are many evasion methods that hackers use nowadays, for the purpose of thi
 2) homoglyph
 3) spacing
 4) adversarial : Mixed leetspeak with dilution evasion techniques
+5) textfooler
+6) deepwordbug
+
 each dataset is splitted to three main splits: train, val, test
+
 so the models can use them directly, to ensure fair comparision
 
 **Evasion dataset**:
 in order to develop the classification model, we need evasion dataset
-The evasion datasets was developed manually and it can be found here:
+
+The evasion datasets was developed manually and it can be found here: 
+
+[evasion_methods_developing](https://github.com/paulinaeb/IDaSec-project/blob/exp4/Evasion_notebooks/evasion.ipynb)
+
+[evasion_datasets](https://github.com/paulinaeb/IDaSec-project/tree/exp4/Evasion_notebooks)
+
 this task was held by @Tibor
 
 **Main expirements**:
@@ -38,29 +55,45 @@ and in order to achieve this task, we conducted many methods:
 - Basic classifiers: Logistic regression classifier and Naive Bayes classifier
 - Deep learning classifier: Long Short Term memory model (LSTM)
 - Transformer classifier : BERT
+  
 All of these 3 expirements share:
 1) the same training, evaluation and test datasets (for fair comparision)
 2) the same evaluation metrics (accuracy, precision, recall, f1-score)
 
 **Basic classifiers**
+
 This classifier is robust and powerful in many scenarios
+
 you can find the results of using it here: 
-[before_evasion](https://github.com/paulinaeb/IDaSec-project/blob/exp1/baseline-model.ipynb)
-[after_evasion](https://github.com/paulinaeb/IDaSec-project/blob/exp1/baseline-model-evasion-version.ipynb)
+
 this task was held by @Paulina
 
+[before_evasion](https://github.com/paulinaeb/IDaSec-project/blob/exp1/baseline-model.ipynb)
+
+[after_evasion](https://github.com/paulinaeb/IDaSec-project/blob/exp1/baseline-model-evasion-version.ipynb)
+
 **Deep learning classifier**
+
 This classifier is dynamic and can work with big datasets
+
 you can find the results of using it here:
+
 this task was held by @Samiha
+
 [before_evasion](https://github.com/paulinaeb/IDaSec-project/blob/exp3/my_exp3/before_evasion.ipynb)
+
 [after_evasion](https://github.com/paulinaeb/IDaSec-project/blob/exp3/my_exp3/after_evasion.ipynb)
 
 **BERT classifier**
+
 This classifier is one of the best models nowadays, it has some great applications
+
 you can find the results of using it here:
+
 this task was held by @Ahad
+
 [before_evasion](https://github.com/paulinaeb/IDaSec-project/blob/exp2/LLM_BeforeEvasion.ipynb)
+
 [after_evasion](https://github.com/paulinaeb/IDaSec-project/blob/exp2/LLM_After_Evasion.ipynb)
 
 
