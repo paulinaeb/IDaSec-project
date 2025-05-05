@@ -3,16 +3,23 @@
 The main objective of this project is to classify spam emails and messages effeciently by coducting 3 main expirements (basic classifier, deep learning classifier and transformer based classifier) on 3 different evasion techniques (spacing, charswap, homoglyph) and comparing between them and introduce the best one (or hybrid method).
   
 **Spam types**:
+
 There are two main types of spam messages that we considered in this project:
 - Normal spam messages (e.g. 'click the link for free money')
 - Evasion spam emails/messages (e.g. 'cl   ick the link for fr33 monEy')
 
 **Spam dataset**
-This task was critical becasue this dataset will be shared among the three different models so it shouldn't be too much preprocessed (e.g.for example the words shouldn't be stemmed (playing shouldn't become play) because bert model will use it to understand context)
+
+This task was critical becasue this dataset will be shared among the three different models so it shouldn't be too much preprocessed (e.g.for example the words shouldn't be
+
+stemmed (playing shouldn't become play) because bert model will use it to understand context)
+
 so 3 datasets were preprocessed which are:
+
 1) Enron1
 2) Enron2
 3) SMS
+   
 each dataset is splitted to three main splits: train, val, test
 
 so the models can use them directly, to ensure fair comparision
@@ -27,6 +34,7 @@ this task was held by @Samiha
 
 
 **Evasion types**:
+
 There are many evasion methods that hackers use nowadays, for the purpose of this project and within the time frame, we managed to work on these 4 methods:
 1) charswap
 2) homoglyph
@@ -40,6 +48,7 @@ each dataset is splitted to three main splits: train, val, test
 so the models can use them directly, to ensure fair comparision
 
 **Evasion dataset**:
+
 in order to develop the classification model, we need evasion dataset
 
 The evasion datasets was developed manually and it can be found here: 
@@ -51,6 +60,7 @@ The evasion datasets was developed manually and it can be found here:
 this task was held by @Tibor
 
 **Main expirements**:
+
 and in order to achieve this task, we conducted many methods:
 - Basic classifiers: Logistic regression classifier and Naive Bayes classifier
 - Deep learning classifier: Long Short Term memory model (LSTM)
