@@ -15,4 +15,16 @@
   you can find it here
   [View the evasion_analysis](https://github.com/paulinaeb/IDaSec-project/blob/exp3/my_exp3/after_evasion.ipynb)
 
+## References
 
+medium
+
+(https://yashpaneliya.medium.com/decoding-lstm-using-pytorch-eda47d7d1766)[https://yashpaneliya.medium.com/decoding-lstm-using-pytorch-eda47d7d1766]
+
+kaggle for datasets
+
+(https://www.kaggle.com/datasets/wcukierski/enron-email-dataset)[https://www.kaggle.com/datasets/wcukierski/enron-email-dataset]
+
+Analytics vidhya
+
+(https://www.analyticsvidhya.com/blog/2021/05/sms-spam-detection-using-lstm-a-hands-on-guide/)[https://www.analyticsvidhya.com/blog/2021/05/sms-spam-detection-using-lstm-a-hands-on-guide/]
