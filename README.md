@@ -1,113 +1,160 @@
-# Spam detection and evasion tool 
+# IDaSec-project
 
-The main objective of this project is to classify spam emails and messages effeciently by coducting 3 main expirements (basic classifier, deep learning classifier and transformer based classifier) on 3 different evasion techniques (spacing, charswap, homoglyph) and comparing between them and introduce the best one (or hybrid method).
-  
-**Spam types**:
+# 🛡️ Adversarial Evasion Techniques for Spam Detection
 
-There are two main types of spam messages that we considered in this project:
-- Normal spam messages (e.g. 'click the link for free money')
-- Evasion spam emails/messages (e.g. 'cl   ick the link for fr33 monEy')
+This project explores various **adversarial text attacks** applied to spam messages to test the robustness of spam classifiers. Each notebook implements a different evasion technique — ranging from simple character swaps to complex semantic perturbations — and applies it to real-world datasets.
 
-**Spam dataset**
+The goal is to simulate how spam content can bypass machine learning-based detection by modifying the input text while preserving its meaning.
 
-This task was critical becasue this dataset will be shared among the three different models so it shouldn't be too much preprocessed (e.g.for example the words shouldn't be
+---
 
-stemmed (playing shouldn't become play) because bert model will use it to understand context)
+## 📚 Contents
 
-so 3 datasets were preprocessed which are:
+| Notebook             | Technique                      | Summary |
+|----------------------|-------------------------------|---------|
+| `charswap.ipynb`     | Character Swap                | Randomly swaps adjacent characters to simulate typos |
+| `deepwordbug.ipynb`  | DeepWordBug (TextAttack)      | Character-level perturbation attack from literature |
+| `evasion.ipynb`      | Custom Combined Evasion       | Applies spacing, emojis, typos, obfuscation, and fake signatures |
+| `homoglyph.ipynb`    | Unicode Homoglyphs            | Substitutes characters with visually similar Unicode glyphs |
+| `spacing.ipynb`      | Keyword Spacing               | Adds spaces within known spam keywords |
+| `textfooler.ipynb`   | TextFooler (TextAttack)       | Replaces important words with semantically similar alternatives |
 
-1) Enron1
-2) Enron2
-3) SMS
-   
-each dataset is splitted to three main splits: train, val, test
+Each notebook is self-contained with markdown documentation explaining how to run it, what each step does, and what output to expect.
 
-so the models can use them directly, to ensure fair comparision
+---
 
-The datasets can be found here: 
+## 📁 Folder Structure
 
-[spam_datasets_preprocessing](https://github.com/paulinaeb/IDaSec-project/blob/main/dataset/data_security_datasets.ipynb)
+```
+.
+├── Evasion_notebooks/               # Jupyter notebooks for each attack
+│   ├── charswap.ipynb               # Random character swaps
+│   ├── deepwordbug.ipynb            # DeepWordBug (TextAttack)
+│   ├── evasion.ipynb                # Combined obfuscation methods
+│   ├── homoglyph.ipynb              # Unicode homoglyph substitutions
+│   ├── spacing.ipynb                # Keyword spacing attack
+│   └── textfooler.ipynb             # TextFooler (TextAttack)
+│
+├── dataset/                         # Dataset directory
+│   ├── enron1/                      # Enron variant 1
+│   ├── enron2/                      # Enron variant 2
+│   └── sms/                         # SMS dataset
+│       ├── charswap/               # Charswap-augmented data
+│       ├── homoglyph/              # Homoglyph-augmented data
+│       ├── mixed/                  # Mixed obfuscation results
+│       ├── spacing/                # Spacing attack results
+│       ├── train.csv               # Raw training data
+│       ├── val.csv                 # Raw validation data
+│       └── test.csv                # Raw test data
+│
+├── .gitignore
+├── README.md
+└── requirements.txt
 
-[spam_datasets](https://github.com/paulinaeb/IDaSec-project/tree/main/dataset)
+```
 
-this task was held by @Samiha
+---
 
+## 🧰 Prerequisites
 
-**Evasion types**:
+Ensure you have Python 3.7+ installed. Create a virtual environment (optional but recommended):
 
-There are many evasion methods that hackers use nowadays, for the purpose of this project and within the time frame, we managed to work on these 4 methods:
-1) charswap
-2) homoglyph
-3) spacing
-4) adversarial : Mixed leetspeak with dilution evasion techniques
-5) textfooler
-6) deepwordbug
+```bash
+python -m venv env
+source env/bin/activate  # On Windows: .\env\Scripts\activate
+```
 
-each dataset is splitted to three main splits: train, val, test
+Then install the required dependencies:
 
-so the models can use them directly, to ensure fair comparision
+```bash
+pip install -r requirements.txt
+```
 
-**Evasion dataset**:
+Some notebooks use specialized libraries like `textattack`, `nlpaug`, and `homoglyphs`. These are included in the `requirements.txt`, but you can also install manually if needed:
 
-in order to develop the classification model, we need evasion dataset
+```bash
+pip install textattack transformers nlpaug swifter tqdm homoglyphs
+```
 
-The evasion datasets was developed manually and it can be found here: 
+---
 
-[evasion_methods_developing](https://github.com/paulinaeb/IDaSec-project/blob/exp4/Evasion_notebooks/evasion.ipynb)
+## 📝 Dataset Format
 
-[evasion_datasets](https://github.com/paulinaeb/IDaSec-project/tree/exp4/Evasion_notebooks)
+All experiments rely on simple CSV-formatted spam datasets. Each file should have the following structure:
 
-this task was held by @Tibor
+| email                          | target |
+|--------------------------------|--------|
+| "Congratulations, you won!"    | spam   |
+| "Meeting rescheduled to 3 PM." | ham    |
 
-**Main expirements**:
+For full reproducibility:
+- Place `train.csv`, `val.csv`, and `test.csv` under `dataset/sms/`
+- For homoglyph or Enron-specific variants, use paths like `dataset/enron1/enron1_test.csv`
 
-and in order to achieve this task, we conducted many methods:
-- Basic classifiers: Logistic regression classifier and Naive Bayes classifier
-- Deep learning classifier: Long Short Term memory model (LSTM)
-- Transformer classifier : BERT
-  
-All of these 3 expirements share:
-1) the same training, evaluation and test datasets (for fair comparision)
-2) the same evaluation metrics (accuracy, precision, recall, f1-score)
+---
 
-**Basic classifiers**
+## 🚀 How to Run Experiments
 
-This classifier is robust and powerful in many scenarios
+Each notebook contains all necessary code to:
+- Load the dataset
+- Apply its specific attack (only to spam messages)
+- Save the augmented dataset to a new `.csv` file
 
-you can find the results of using it here: 
+### Example:
+To run the **Character Swap** attack:
 
-this task was held by @Paulina
+1. Open `charswap.ipynb`
+2. Run all cells (make sure `../dataset/sms/train.csv` exists)
+3. Output will be saved as:
+   ```
+   dataset/sms/charswap/train_with_charswap.csv
+   ```
 
-[before_evasion](https://github.com/paulinaeb/IDaSec-project/blob/exp1/baseline-model.ipynb)
+Repeat similarly for the other notebooks. Each one includes markdown explanations inline to guide the reader.
 
-[after_evasion](https://github.com/paulinaeb/IDaSec-project/blob/exp1/baseline-model-evasion-version.ipynb)
+---
 
-**Deep learning classifier**
+## 💡 Use Cases
 
-This classifier is dynamic and can work with big datasets
+- Adversarial training of spam classifiers
+- Benchmarking model robustness against evasion attacks
+- Research into natural language adversarial examples
 
-you can find the results of using it here:
+---
 
-this task was held by @Samiha
+## 📈 Results (Optional)
 
-[before_evasion](https://github.com/paulinaeb/IDaSec-project/blob/exp3/my_exp3/before_evasion.ipynb)
+You can extend this project by training classifiers on clean vs. adversarial data and evaluating accuracy drops caused by each attack.
 
-[after_evasion](https://github.com/paulinaeb/IDaSec-project/blob/exp3/my_exp3/after_evasion.ipynb)
+---
 
-**BERT classifier**
+## 🛠 Troubleshooting
 
-This classifier is one of the best models nowadays, it has some great applications
+- **FileNotFoundError**: Check dataset paths. They are relative and may need to be adjusted.
+- **NLTK errors in TextFooler**: Ensure you download required resources using:
+  ```python
+  import nltk
+  nltk.download('averaged_perceptron_tagger')
+  ```
+---
 
-you can find the results of using it here:
+## 📚 Literature & References
 
-this task was held by @Ahad
+These works inspired or informed the evasion strategies demonstrated in this project:
 
-[before_evasion](https://github.com/paulinaeb/IDaSec-project/blob/exp2/LLM_BeforeEvasion.ipynb)
+- [Evasion Attacks on Machine Learning (Medium)](https://medium.com/data-science/evasion-attacks-on-machine-learning-or-adversarial-examples-12f2283e06a1)  
+  A beginner-friendly introduction to adversarial examples and how they bypass models.
 
-[after_evasion](https://github.com/paulinaeb/IDaSec-project/blob/exp2/LLM_After_Evasion.ipynb)
+- [Adversarial Attacks Against Text-Based AI Models: A Survey (IEEE 2024)](https://ieeexplore.ieee.org/abstract/document/10431737)  
+  A comprehensive academic overview of text-based evasion techniques in NLP.
 
+- [TextAttack: A Framework for Adversarial Attacks, Data Augmentation, and Training in NLP (EMNLP 2020)](https://aclanthology.org/2020.emnlp-demos.16.pdf)  
+  The paper behind the `textattack` library, used in this project for DeepWordBug and TextFooler attacks.
 
+---
 
+## 🤝 Contributions
 
+Pull requests are welcome! If you'd like to add a new evasion strategy, fork the repository and submit a PR.
 
-
+---
