@@ -151,6 +151,29 @@ These works inspired or informed the evasion strategies demonstrated in this pro
 - [TextAttack: A Framework for Adversarial Attacks, Data Augmentation, and Training in NLP (EMNLP 2020)](https://aclanthology.org/2020.emnlp-demos.16.pdf)  
   The paper behind the `textattack` library, used in this project for DeepWordBug and TextFooler attacks.
 
+- [A Review of Spam Email Detection: Analysis of Spammer Strategies and the Dataset Shift Problem (Artificial Intelligence Review, 2023)](https://link.springer.com/article/10.1007/s10462-022-10217-3)
+  A comprehensive review of spam email detection methods, focusing on evolving spammer strategies and the challenge of dataset shift over time.
+  
+- [Enhancing Spam Email Detection with Machine Learning: A Comparative Study of Logistic Regression and Naive Bayes Using Apache Spark (Transactions on Computer Science and Intelligent Systems Research, 2024)](https://doi.org/10.62051/gt8zn492)
+  A performance comparison of logistic regression and Naive Bayes for spam detection in a distributed environment using Apache Spark.
+  
+- [Spam Email Detection Using Deep Learning Techniques (2021)](https://www.researchgate.net/publication/352412570_Venturing_beyond_Koselleck%27s_Erwartungshorizont_on_the_category_of_the_utopian)
+  Explores deep learning approaches like CNN and LSTM to enhance spam email detection accuracy.
+
+- [A Comprehensive Academic Overview of Text-Based Evasion Techniques in NLP (IEEE, 2024)](https://ieeexplore.ieee.org/abstract/document/10431737)
+  A detailed survey of adversarial text-based evasion techniques in NLP and their impact on model robustness.
+
+- [Spam Detection and Classification Based on DistilBERT Deep Learning Algorithm (Applied Science and Engineering Journal for Advanced Research, 2024)](https://asejar.singhpublication.com/index.php/ojs/article/view/97)
+  Utilizes the lightweight transformer model DistilBERT for efficient and high-performing spam classification.
+
+- [Email Spam Detection Using Hierarchical Attention Hybrid Deep Learning Method (Expert Systems with Applications, 2023)](https://www.sciencedirect.com/science/article/abs/pii/S0957417423014793)
+  Proposes a hybrid model combining CNNs, GRUs, and attention mechanisms to enhance spam email detection, demonstrating superior performance through cross-dataset evaluations.
+
+- [A Systematic Review of Deep Learning Techniques for Phishing Email Detection (Electronics, 2024)](https://www.mdpi.com/2079-9292/13/19/3823)
+  Conducts a review of 33 studies on deep learning approaches for phishing email detection, identifying current challenges and suggesting future research directions.
+
+  
+
 ---
 
 ## 🤝 Contributions
